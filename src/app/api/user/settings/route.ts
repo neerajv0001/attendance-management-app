@@ -75,7 +75,9 @@ export async function GET() {
             username: user.username,
             name: user.name,
             email: user.email,
-            role: user.role
+            role: user.role,
+            subject: user.subject,
+            courseId: user.courseId
         });
     } catch (error) {
         console.error('Get user error:', error);

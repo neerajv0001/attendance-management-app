@@ -14,18 +14,21 @@ export default function AdminCourses() {
   const [deletingCourse, setDeletingCourse] = useState<any | null>(null);
   const toast = useToast();
   const sourceId = useMemo(() => `admin-courses-${Math.random().toString(36).slice(2)}`, []);
+  const sortCoursesByName = useCallback((list: any[]) => {
+    return [...list].sort((a, b) => (a?.name || '').localeCompare(b?.name || '', undefined, { sensitivity: 'base' }));
+  }, []);
 
   const refreshCourses = useCallback(async () => {
     try {
       const res = await fetch('/api/courses', { cache: 'no-store' });
       const data = await res.json();
-      setCourses(Array.isArray(data) ? data : []);
+      setCourses(sortCoursesByName(Array.isArray(data) ? data : []));
     } catch (e) {
       setCourses([]);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [sortCoursesByName]);
 
   const broadcastCoursesUpdated = useCallback((name?: string) => {
     try {
@@ -56,9 +59,10 @@ export default function AdminCourses() {
     if (!courseName) return;
     // optimistic UI: add locally first
     const tempId = `temp-${Date.now()}`;
-    const tempCourse = { id: tempId, name: courseName };
-    setCourses(prev => [...prev, tempCourse]);
+    const tempCourse = { id: tempId, name: courseName, subjects: [] };
+    setCourses(prev => sortCoursesByName([...prev, tempCourse]));
     setNewCourseName('');
+    toast.showToast?.(`Successfully Added ${courseName}`, 'success');
     try {
       const res = await fetch('/api/courses', {
         method: 'POST',
@@ -68,18 +72,18 @@ export default function AdminCourses() {
       const payload = await res.json();
       if (res.ok) {
         // replace temp item with server item (if server returned it)
-        setCourses(prev => prev.map(c => c.id === tempId ? (payload && payload.id ? payload : { ...c, id: payload?.id || c.id, name: payload?.name || c.name }) : c));
-        toast.showToast?.(`Successfully Added ${courseName}`, 'success');
-        await refreshCourses();
+        setCourses(prev => sortCoursesByName(prev.map(c => c.id === tempId ? (payload && payload.id ? payload : { ...c, id: payload?.id || c.id, name: payload?.name || c.name }) : c)));
         broadcastCoursesUpdated(payload?.name || courseName);
       } else {
         // remove optimistic item
         setCourses(prev => prev.filter(c => c.id !== tempId));
-        toast.showToast?.(payload?.error || `Failed to add ${courseName}. Reverted.`, 'error');
+        const msg = payload?.error || `Failed to add ${courseName}. Reverted.`;
+        toast.showToast?.(msg, 'error');
       }
     } catch (err: any) {
       setCourses(prev => prev.filter(c => c.id !== tempId));
-      toast.showToast?.(err?.message || `Error adding ${courseName}. Reverted.`, 'error');
+      const msg = err?.message || `Error adding ${courseName}. Reverted.`;
+      toast.showToast?.(msg, 'error');
     }
   };
 
@@ -97,9 +101,10 @@ export default function AdminCourses() {
     const nextName = editingName.trim();
     if (!nextName) return;
     const backup = courses;
-    setCourses(prev => prev.map(c => c.id === id ? { ...c, name: nextName } : c));
+    setCourses(prev => sortCoursesByName(prev.map(c => c.id === id ? { ...c, name: nextName } : c)));
     setEditingId(null);
     setEditingName('');
+    toast.showToast?.('Course updated successfully!', 'success');
     try {
       const res = await fetch('/api/courses', {
         method: 'PUT',
@@ -108,8 +113,6 @@ export default function AdminCourses() {
       });
 
       if (res.ok) {
-        toast.showToast?.('Course updated successfully!', 'success');
-        await refreshCourses();
         broadcastCoursesUpdated(nextName);
       } else {
         setCourses(backup);
@@ -132,7 +135,7 @@ export default function AdminCourses() {
     // optimistic remove: remove locally first, keep backup
     const backup = courses;
     setCourses(prev => prev.filter(c => c.id !== courseToDelete.id));
-    // no loading toast; remove optimistically and show final toast
+    toast.showToast?.(`Course ${courseToDelete.name} removed successfully!`, 'success');
     try {
       const res = await fetch('/api/courses', {
         method: 'DELETE',
@@ -141,17 +144,17 @@ export default function AdminCourses() {
       });
       const payload = await res.json();
       if (res.ok) {
-        toast.showToast?.(`Course ${courseToDelete.name} removed successfully!`, 'success');
-        await refreshCourses();
         broadcastCoursesUpdated(courseToDelete.name);
       } else {
         // revert on failure
         setCourses(backup);
-        toast.showToast?.(payload?.error || `Failed to remove ${courseToDelete.name}. Reverted.`, 'error');
+        const msg = payload?.error || `Failed to remove ${courseToDelete.name}. Reverted.`;
+        toast.showToast?.(msg, 'error');
       }
     } catch (err: any) {
       setCourses(backup);
-      toast.showToast?.(err?.message || `Error removing ${courseToDelete.name}. Reverted.`, 'error');
+      const msg = err?.message || `Error removing ${courseToDelete.name}. Reverted.`;
+      toast.showToast?.(msg, 'error');
     }
   };
 

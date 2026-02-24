@@ -23,8 +23,8 @@ export default function AddStudentPage() {
     // Fetch courses and students in parallel and update state once to reduce re-renders
     let mounted = true;
     Promise.all([
-      fetch('/api/courses').then(r => r.json()).catch(() => []),
-      fetch('/api/students').then(r => r.json()).catch(() => []),
+      fetch('/api/courses', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
+      fetch('/api/students', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
     ]).then(([coursesData, studentsData]) => {
       if (!mounted) return;
       setCourses(Array.isArray(coursesData) ? coursesData : []);
@@ -36,8 +36,8 @@ export default function AddStudentPage() {
       // if courses or students updated, refetch courses/students
       if (!d || d.type === 'courses_updated' || d.type === 'students_updated' || d.type === 'attendance_saved') {
         Promise.all([
-          fetch('/api/courses').then(r => r.json()).catch(() => []),
-          fetch('/api/students').then(r => r.json()).catch(() => []),
+          fetch('/api/courses', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
+          fetch('/api/students', { cache: 'no-store' }).then(r => r.json()).catch(() => []),
         ]).then(([coursesData, studentsData]) => {
           if (!mounted) return;
           setCourses(Array.isArray(coursesData) ? coursesData : []);
@@ -237,15 +237,29 @@ export default function AddStudentPage() {
                 <div className="modal-footer">
                   <button className="btn btn-outline" onClick={() => setEditing(null)}>Cancel</button>
                   <button className="btn" onClick={async () => {
+                    const target = editing;
+                    if (!target) return;
+                    const next = {
+                      ...target,
+                      name: editForm.name.trim(),
+                      email: editForm.email.trim(),
+                      department: editForm.department.trim(),
+                    };
+                    const backupStudents = students;
+                    // Optimistic UX: close modal and update immediately.
+                    setEditing(null);
+                    setStudents(prev => prev.map(s => s.id === target.id ? { ...s, ...next } : s));
+                    toast.showToast?.('Student updated successfully!', 'success');
                     try {
-                      const res = await fetch('/api/students', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: editing.id, ...editForm }) });
+                      const res = await fetch('/api/students', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: target.id, name: next.name, email: next.email, department: next.department }) });
                       const data = await res.json();
                       if (!res.ok) throw new Error(data.error || 'Failed to update');
-                      setStudents(prev => prev.map(s => s.id === editing.id ? data.student : s));
-                      setEditing(null);
-                      toast.showToast?.('Student updated successfully!', 'success');
+                      setStudents(prev => prev.map(s => s.id === target.id ? data.student : s));
                       try { new BroadcastChannel('attendance_channel').postMessage({ type: 'students_updated', name: data.student.name }); } catch (e) {}
                     } catch (err: any) {
+                      setStudents(backupStudents);
+                      setEditing(target);
+                      setEditForm({ name: target.name || '', email: target.email || '', department: target.department || '' });
                       toast.showToast?.(err.message || 'Failed to update student', 'error');
                     }
                   }}>Save</button>

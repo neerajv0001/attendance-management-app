@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useToast } from '@/components/ToastProvider';
 import DashboardLayout from '@/components/DashboardLayout';
 import { UserRole } from '@/lib/types';
@@ -9,6 +9,7 @@ import Link from 'next/link';
 export default function StudentDashboard() {
   const [stats, setStats] = useState({
     totalClasses: 0,
+    todayTotal: 0,
     present: 0,
     absent: 0,
     percentage: 0
@@ -16,39 +17,51 @@ export default function StudentDashboard() {
   const [todayClasses, setTodayClasses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const toast = useToast();
+  const currentWeekday = useMemo(
+    () => new Date().toLocaleDateString('en-US', { weekday: 'long' }),
+    []
+  );
 
-  useEffect(() => {
+  const loadDashboard = useCallback(async (silent = false) => {
+    const todayKey = new Date().toISOString().split('T')[0];
     const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-    
-    Promise.all([
-      fetch('/api/attendance', { cache: 'no-store' }).then(r => r.json()),
-      fetch('/api/timetable', { cache: 'no-store' }).then(r => r.json())
-    ]).then(([attendance, timetable]) => {
+    try {
+      const [attendance, timetable] = await Promise.all([
+        fetch('/api/attendance', { cache: 'no-store' }).then(r => r.json()),
+        fetch('/api/timetable', { cache: 'no-store' }).then(r => r.json())
+      ]);
+
       if (Array.isArray(attendance)) {
         const total = attendance.length;
-        const present = attendance.filter((r: any) => r.status === 'PRESENT').length;
-        const absent = attendance.filter((r: any) => r.status === 'ABSENT').length;
+        const overallPresent = attendance.filter((r: any) => r.status === 'PRESENT').length;
+        const todayAttendance = attendance.filter((r: any) => r.date === todayKey);
+        const present = todayAttendance.filter((r: any) => r.status === 'PRESENT').length;
+        const absent = todayAttendance.filter((r: any) => r.status === 'ABSENT').length;
         setStats({
           totalClasses: total,
+          todayTotal: todayAttendance.length,
           present,
           absent,
-          percentage: total > 0 ? (present / total) * 100 : 0
+          percentage: total > 0 ? (overallPresent / total) * 100 : 0
         });
       }
-      
+
       if (Array.isArray(timetable)) {
-        const todaySchedule = timetable.filter((t: any) => t.day === today).sort((a: any, b: any) => 
+        const todaySchedule = timetable.filter((t: any) => t.day === today).sort((a: any, b: any) =>
           a.startTime.localeCompare(b.startTime)
         );
         setTodayClasses(todaySchedule);
       }
-      
-      setLoading(false);
-    }).catch(() => {
-      toast.showToast?.('Failed to load dashboard data', 'error');
-      setLoading(false);
-    });
-  }, []);
+    } catch {
+      if (!silent) toast.showToast?.('Failed to load dashboard data', 'error');
+    } finally {
+      if (!silent) setLoading(false);
+    }
+  }, [toast]);
+
+  useEffect(() => {
+    loadDashboard();
+  }, [loadDashboard]);
 
   // listen for cross-tab updates and refresh dashboard data
   useEffect(() => {
@@ -56,33 +69,30 @@ export default function StudentDashboard() {
       const d = e?.detail;
       if (!d) return;
       if (d.type === 'courses_updated' || d.type === 'attendance_saved' || d.type === 'timetable_updated') {
-        // re-run the fetch logic
-        Promise.all([
-          fetch('/api/attendance', { cache: 'no-store' }).then(r => r.json()),
-          fetch('/api/timetable', { cache: 'no-store' }).then(r => r.json())
-        ]).then(([attendance, timetable]) => {
-          if (Array.isArray(attendance)) {
-            const total = attendance.length;
-            const present = attendance.filter((r: any) => r.status === 'PRESENT').length;
-            const absent = attendance.filter((r: any) => r.status === 'ABSENT').length;
-            setStats({
-              totalClasses: total,
-              present,
-              absent,
-              percentage: total > 0 ? (present / total) * 100 : 0
-            });
-          }
-          if (Array.isArray(timetable)) {
-            const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-            const todaySchedule = timetable.filter((t: any) => t.day === today).sort((a: any, b: any) => a.startTime.localeCompare(b.startTime));
-            setTodayClasses(todaySchedule);
-          }
-        }).catch(() => {});
+        loadDashboard(true);
       }
     };
     window.addEventListener('attendance:update', onUpdate as any);
-    return () => window.removeEventListener('attendance:update', onUpdate as any);
-  }, []);
+
+    let bc: BroadcastChannel | null = null;
+    try {
+      bc = new BroadcastChannel('attendance_channel');
+      bc.onmessage = (ev) => {
+        const d = ev?.data;
+        if (!d) return;
+        if (d.type === 'courses_updated' || d.type === 'attendance_saved' || d.type === 'timetable_updated') {
+          loadDashboard(true);
+        }
+      };
+    } catch (e) {
+      bc = null;
+    }
+
+    return () => {
+      window.removeEventListener('attendance:update', onUpdate as any);
+      try { if (bc) bc.close(); } catch (e) {}
+    };
+  }, [loadDashboard]);
 
   const getAttendanceColor = (percentage: number) => {
     if (percentage >= 75) return 'var(--success-color)';
@@ -109,9 +119,25 @@ export default function StudentDashboard() {
 
   return (
     <DashboardLayout role={UserRole.STUDENT}>
-      <div className="page-header">
-        <h1>Student Dashboard</h1>
-        <p>Track your attendance and view your schedule.</p>
+      <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, flexWrap: 'wrap' }}>
+        <div>
+          <h1>Student Dashboard</h1>
+          <p>Track your attendance and view your schedule.</p>
+        </div>
+        <div
+          style={{
+            alignSelf: 'flex-start',
+            padding: '6px 12px',
+            borderRadius: 999,
+            background: '#e8f1ff',
+            color: '#003366',
+            fontWeight: 700,
+            fontSize: '0.82rem',
+            border: '1px solid #bfdbfe',
+          }}
+        >
+          {currentWeekday}
+        </div>
       </div>
       
       <div className="grid-3" style={{ marginBottom: '32px' }}>
@@ -142,7 +168,7 @@ export default function StudentDashboard() {
           <div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '4px' }}>Classes Present</p>
             <p style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--primary-color)' }}>{stats.present}</p>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-light)' }}>Out of {stats.totalClasses} total</p>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-light)' }}>Today: {stats.todayTotal} marked</p>
           </div>
         </div>
         
@@ -151,7 +177,7 @@ export default function StudentDashboard() {
           <div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '4px' }}>Classes Absent</p>
             <p style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--primary-color)' }}>{stats.absent}</p>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-light)' }}>Keep it low!</p>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-light)' }}>Today based count</p>
           </div>
         </div>
       </div>
@@ -169,16 +195,35 @@ export default function StudentDashboard() {
               {todayClasses.map((cls, idx) => (
                 <div key={idx} style={{ 
                   padding: '16px', 
-                  background: '#f8fafc', 
+                  background: cls.isCancelled ? '#fff1f2' : '#f8fafc', 
                   borderRadius: '8px',
-                  borderLeft: '4px solid var(--accent-color)'
+                  borderLeft: cls.isCancelled ? '4px solid #ef4444' : '4px solid var(--accent-color)'
                 }}>
-                  <div style={{ fontWeight: '600', color: 'var(--primary-color)', marginBottom: '4px' }}>
+                  <div style={{ fontWeight: '600', color: 'var(--primary-color)', marginBottom: '4px', textDecoration: cls.isCancelled ? 'line-through' : 'none' }}>
                     {cls.subject}
                   </div>
                   <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                     {cls.startTime} - {cls.endTime}
                   </div>
+                  {cls.isCancelled && (
+                    <div style={{ marginTop: 6 }}>
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          padding: '3px 10px',
+                          borderRadius: 999,
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                          background: '#fee2e2',
+                          color: '#b91c1c',
+                          border: '1px solid #fca5a5',
+                        }}
+                      >
+                        Cancelled
+                      </span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

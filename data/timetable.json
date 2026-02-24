@@ -1,10 +1,58 @@
 [
   {
-    "id": "tt-1771824218049",
-    "subject": "BI",
+    "id": "tt-1771860368115",
+    "subject": "Software Testing & Quality Assurance",
+    "day": "Monday",
+    "startTime": "01:10",
+    "endTime": "01:50",
+    "teacherId": "teacher-1771413429408",
+    "isCancelled": false
+  },
+  {
+    "id": "tt-1771860434738",
+    "subject": "Software Testing & Quality Assurance",
     "day": "Tuesday",
-    "startTime": "10:00",
-    "endTime": "10:40",
-    "teacherId": "teacher-1771413429408"
+    "startTime": "01:50",
+    "endTime": "02:30",
+    "teacherId": "teacher-1771413429408",
+    "isCancelled": false
+  },
+  {
+    "id": "tt-1771860540504",
+    "subject": "Software Testing & Quality Assurance",
+    "day": "Wednesday",
+    "startTime": "02:30",
+    "endTime": "03:10",
+    "teacherId": "teacher-1771413429408",
+    "isCancelled": false
+  },
+  {
+    "id": "tt-1771860670918",
+    "subject": "Software Testing & Quality Assurance",
+    "day": "Friday",
+    "startTime": "02:30",
+    "endTime": "03:10",
+    "teacherId": "teacher-1771413429408",
+    "isCancelled": false
+  },
+  {
+    "id": "tt-1771903481587",
+    "subject": "IT Act & Cyber Law",
+    "day": "Monday",
+    "startTime": "01:50",
+    "endTime": "02:30",
+    "teacherId": "teacher-1771902560494",
+    "isCancelled": false
+  },
+  {
+    "id": "tt-1771903982203",
+    "subject": "IT Act & Cyber Law",
+    "day": "Tuesday",
+    "startTime": "02:30",
+    "endTime": "03:10",
+    "teacherId": "teacher-1771902560494",
+    "isCancelled": true,
+    "cancelledAt": "2026-02-24T03:59:55.288Z",
+    "cancelReason": "Cancelled by teacher"
   }
 ]

@@ -74,6 +74,9 @@ export interface ITimetableEntry extends Document {
     startTime: string;
     endTime: string;
     teacherId: string;
+    isCancelled?: boolean;
+    cancelledAt?: Date;
+    cancelReason?: string;
 }
 
 const TimetableEntrySchema = new Schema<ITimetableEntry>({
@@ -82,7 +85,10 @@ const TimetableEntrySchema = new Schema<ITimetableEntry>({
     day: { type: String, required: true },
     startTime: { type: String, required: true },
     endTime: { type: String, required: true },
-    teacherId: { type: String, required: true }
+    teacherId: { type: String, required: true },
+    isCancelled: { type: Boolean, default: false },
+    cancelledAt: { type: Date },
+    cancelReason: { type: String }
 });
 
 // Export models (with check for existing models to avoid hot-reload issues)

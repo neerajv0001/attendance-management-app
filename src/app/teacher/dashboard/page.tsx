@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
 import { UserRole } from '@/lib/types';
 import Link from 'next/link';
@@ -9,48 +9,70 @@ export default function TeacherDashboard() {
   const [stats, setStats] = useState({
     totalStudents: 0,
     todayPresentCount: 0,
-    todayAbsentCount: 0
+    todayAbsentCount: 0,
   });
+  const [todayLectures, setTodayLectures] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    let alive = true;
+  const loadStats = useCallback(async (silent = false) => {
+    try {
+      const [students, attendance, timetable] = await Promise.all([
+        fetch('/api/students', { cache: 'no-store' }).then((r) => r.json()),
+        fetch('/api/attendance', { cache: 'no-store' }).then((r) => r.json()),
+        fetch('/api/timetable', { cache: 'no-store' }).then((r) => r.json()),
+      ]);
 
-    const loadStats = async () => {
-      try {
-        const [students, attendance] = await Promise.all([
-          fetch('/api/students').then((r) => r.json()),
-          fetch('/api/attendance').then((r) => r.json())
-        ]);
+      const studentList = Array.isArray(students) ? students : [];
+      const studentIds = new Set(studentList.map((s: any) => s.id));
+      const todayKey = new Date().toISOString().split('T')[0];
+      const todayAttendance = (Array.isArray(attendance) ? attendance : []).filter(
+        (a: any) => a.date === todayKey && studentIds.has(a.studentId)
+      );
 
-        const todayKey = new Date().toISOString().split('T')[0];
-        const todayAttendance = (Array.isArray(attendance) ? attendance : []).filter((a: any) => a.date === todayKey);
-        const todayPresent = todayAttendance.filter((a: any) => a.status === 'PRESENT').length;
-        const todayAbsent = todayAttendance.filter((a: any) => a.status === 'ABSENT').length;
-
-        if (!alive) return;
-        setStats({
-          totalStudents: Array.isArray(students) ? students.length : 0,
-          todayPresentCount: todayPresent,
-          todayAbsentCount: todayAbsent
-        });
-      } finally {
-        if (alive) setLoading(false);
+      const statusByStudent = new Map<string, 'PRESENT' | 'ABSENT'>();
+      for (const rec of todayAttendance) {
+        if (rec?.studentId && (rec?.status === 'PRESENT' || rec?.status === 'ABSENT')) {
+          statusByStudent.set(rec.studentId, rec.status);
+        }
       }
-    };
 
+      const todayPresent = Array.from(statusByStudent.values()).filter((s) => s === 'PRESENT').length;
+      const todayAbsent = Array.from(statusByStudent.values()).filter((s) => s === 'ABSENT').length;
+
+      setStats({
+        totalStudents: studentList.length,
+        todayPresentCount: todayPresent,
+        todayAbsentCount: todayAbsent,
+      });
+
+      const todayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+      const lectures = (Array.isArray(timetable) ? timetable : [])
+        .filter((t: any) => t.day === todayName)
+        .sort((a: any, b: any) => (a.startTime || '').localeCompare(b.startTime || ''));
+      setTodayLectures(lectures);
+    } finally {
+      if (!silent) setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
     loadStats();
+    const onUpdate = () => { loadStats(true); };
+    window.addEventListener('attendance:update', onUpdate as EventListener);
 
-    const onAttendanceUpdate = () => loadStats();
-    window.addEventListener('attendance:update', onAttendanceUpdate as EventListener);
-    const intervalId = setInterval(loadStats, 10000);
+    let bc: BroadcastChannel | null = null;
+    try {
+      bc = new BroadcastChannel('attendance_channel');
+      bc.onmessage = () => { loadStats(true); };
+    } catch (e) {
+      bc = null;
+    }
 
     return () => {
-      alive = false;
-      window.removeEventListener('attendance:update', onAttendanceUpdate as EventListener);
-      clearInterval(intervalId);
+      window.removeEventListener('attendance:update', onUpdate as EventListener);
+      try { if (bc) bc.close(); } catch (e) {}
     };
-  }, []);
+  }, [loadStats]);
 
   if (loading) {
     return (
@@ -99,18 +121,9 @@ export default function TeacherDashboard() {
       </div>
 
       <div style={{ display: 'flex', gap: '16px', marginBottom: '32px', flexWrap: 'wrap' }}>
-        <Link href="/teacher/add-student" className="btn btn-lg">
-          <span>➕</span>
-          Add New Student
-        </Link>
-        <Link href="/teacher/attendance" className="btn btn-lg btn-outline">
-          <span>✅</span>
-          Mark Attendance
-        </Link>
-        <Link href="/teacher/reports" className="btn btn-lg btn-outline">
-          <span>📊</span>
-          View Reports
-        </Link>
+        <Link href="/teacher/add-student" className="btn btn-lg">Add New Student</Link>
+        <Link href="/teacher/attendance" className="btn btn-lg btn-outline">Mark Attendance</Link>
+        <Link href="/teacher/reports" className="btn btn-lg btn-outline">View Reports</Link>
       </div>
 
       <div className="card">
@@ -123,11 +136,30 @@ export default function TeacherDashboard() {
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>View and manage students</p>
             </div>
           </Link>
+
           <Link href="/teacher/timetable" style={{ textDecoration: 'none' }}>
-            <div className="card" style={{ margin: 0, textAlign: 'center', cursor: 'pointer' }}>
-              <div style={{ fontSize: '32px', marginBottom: '8px' }}>📅</div>
-              <h4 style={{ color: 'var(--primary-color)', marginBottom: '4px' }}>Timetable</h4>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Manage class schedule</p>
+            <div className="card" style={{ margin: 0, cursor: 'pointer' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+                <h4 style={{ color: 'var(--primary-color)', margin: 0 }}>Today's Lectures</h4>
+                <span style={{ fontSize: '1.1rem' }}>🗓️</span>
+              </div>
+              {todayLectures.length === 0 ? (
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>No lectures scheduled today.</p>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  {todayLectures.slice(0, 3).map((lec: any) => (
+                    <div key={lec.id} style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
+                      <strong style={{ color: 'var(--text-primary)' }}>{lec.subject}</strong> {lec.startTime} - {lec.endTime}
+                    </div>
+                  ))}
+                  {todayLectures.length > 3 && (
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-light)' }}>
+                      +{todayLectures.length - 3} more (open timetable)
+                    </div>
+                  )}
+                </div>
+              )}
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.78rem', marginTop: 8 }}>Tap to manage timetable</p>
             </div>
           </Link>
         </div>

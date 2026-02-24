@@ -9,6 +9,14 @@ export default function AdminTeachers() {
   const [teachers, setTeachers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [viewing, setViewing] = useState<any | null>(null);
+  const [editing, setEditing] = useState<any | null>(null);
+  const [editForm, setEditForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    experience: '',
+  });
+  const [savingEdit, setSavingEdit] = useState(false);
   const toast = useToast();
 
   const loadTeachers = useCallback(() => {
@@ -64,6 +72,21 @@ export default function AdminTeachers() {
                   <td style={{ padding: '15px' }}>
                     <div style={{ display: 'flex', gap: 8 }}>
                       <button className="btn btn-sm btn-outline" onClick={() => setViewing(teacher)} type="button">View</button>
+                      <button
+                        className="btn btn-sm"
+                        onClick={() => {
+                          setEditing(teacher);
+                          setEditForm({
+                            name: teacher.name || '',
+                            email: teacher.email || '',
+                            subject: teacher.subject || '',
+                            experience: teacher.experience || '',
+                          });
+                        }}
+                        type="button"
+                      >
+                        Edit
+                      </button>
                     </div>
                   </td>
                 </tr>
@@ -73,6 +96,96 @@ export default function AdminTeachers() {
         </div>
       ) : (
         <div className="card">No teachers found.</div>
+      )}
+      {editing && (
+        <div className="modal-overlay" onClick={() => setEditing(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header"><h3>Edit Teacher</h3></div>
+            <div className="modal-body">
+              <div className="input-group">
+                <label>Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={editForm.name}
+                  onChange={(e) => setEditForm(prev => ({ ...prev, name: e.target.value }))}
+                />
+              </div>
+              <div className="input-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  value={editForm.email}
+                  onChange={(e) => setEditForm(prev => ({ ...prev, email: e.target.value }))}
+                />
+              </div>
+              <div className="input-group">
+                <label>Subject</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={editForm.subject}
+                  onChange={(e) => setEditForm(prev => ({ ...prev, subject: e.target.value }))}
+                />
+              </div>
+              <div className="input-group">
+                <label>Experience (Years)</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={editForm.experience}
+                  onChange={(e) => setEditForm(prev => ({ ...prev, experience: e.target.value }))}
+                />
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button className="btn btn-outline" onClick={() => setEditing(null)} disabled={savingEdit}>Cancel</button>
+              <button
+                className="btn"
+                disabled={savingEdit}
+                onClick={async () => {
+                  if (!editing) return;
+                  setSavingEdit(true);
+                  const backup = teachers;
+                  const optimistic = teachers.map(t => t.id === editing.id ? { ...t, ...editForm } : t);
+                  setTeachers(optimistic);
+                  setEditing(null);
+                  toast.showToast?.('Teacher updated successfully!', 'success');
+
+                  try {
+                    const res = await fetch('/api/admin/teachers', {
+                      method: 'PUT',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ id: editing.id, ...editForm }),
+                    });
+                    const data = await res.json().catch(() => ({}));
+                    if (!res.ok) {
+                      setTeachers(backup);
+                      toast.showToast?.(data?.error || 'Failed to update teacher', 'error');
+                      return;
+                    }
+                    if (data?.teacher) {
+                      setTeachers(prev => prev.map(t => t.id === editing.id ? data.teacher : t));
+                    }
+                    try {
+                      const bc = new BroadcastChannel('attendance_channel');
+                      bc.postMessage({ type: 'teachers_updated', source: 'admin-teachers' });
+                      bc.close();
+                    } catch (e) {}
+                  } catch (e: any) {
+                    setTeachers(backup);
+                    toast.showToast?.(e?.message || 'Failed to update teacher', 'error');
+                  } finally {
+                    setSavingEdit(false);
+                  }
+                }}
+              >
+                {savingEdit ? 'Saving...' : 'Save'}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
       {viewing && (
         <div className="modal-overlay" onClick={() => setViewing(null)}>

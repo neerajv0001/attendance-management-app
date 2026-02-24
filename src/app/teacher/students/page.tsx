@@ -66,30 +66,56 @@ export default function TeacherStudents() {
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingStudent) return;
+    const target = editingStudent;
+    const next = {
+      ...target,
+      name: editForm.name.trim(),
+      email: editForm.email.trim(),
+      department: editForm.department.trim(),
+    };
+    const backupStudents = students;
+    const backupFiltered = filtered;
+
+    // Optimistic UX: close modal and update row immediately on first click.
+    setEditingStudent(null);
+    setStudents(prev => prev.map(s => s.id === target.id ? { ...s, ...next } : s));
+    setFiltered(prev => prev.map(s => s.id === target.id ? { ...s, ...next } : s));
+    toast.showToast?.('Student updated successfully!', 'success');
 
     try {
-      const res = await fetch(`/api/students/${editingStudent.id}`, {
+      const res = await fetch(`/api/students/${target.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(editForm)
+        body: JSON.stringify({
+          name: next.name,
+          email: next.email,
+          department: next.department,
+        })
       });
 
       if (res.ok) {
-        setMessage({ type: 'success', text: 'Student updated successfully!' });
-        toast.showToast?.('Student updated successfully!', 'success');
         try {
           const bc = new BroadcastChannel('attendance_channel');
           bc.postMessage({ type: 'students_updated', source: 'teacher-students' });
           bc.close();
         } catch (e) {}
-        setEditingStudent(null);
         fetchStudents();
       } else {
         const data = await res.json();
+        setStudents(backupStudents);
+        setFiltered(backupFiltered);
+        setEditingStudent(target);
+        setEditForm({ name: target.name || '', email: target.email || '', department: target.department || '' });
         setMessage({ type: 'error', text: data.error || 'Failed to update student' });
+        toast.showToast?.(data.error || 'Failed to update student', 'error');
       }
     } catch (error) {
+      setStudents(backupStudents);
+      setFiltered(backupFiltered);
+      setEditingStudent(target);
+      setEditForm({ name: target.name || '', email: target.email || '', department: target.department || '' });
       setMessage({ type: 'error', text: 'An error occurred. Please try again.' });
+      toast.showToast?.('An error occurred. Please try again.', 'error');
     }
   };
 
@@ -177,7 +203,7 @@ export default function TeacherStudents() {
 
       {filtered.length > 0 ? (
       <div className="card">
-          <div className="table-container">
+          <div style={{ overflowX: 'auto' }}>
             <table className="data-table">
               <thead>
                 <tr>

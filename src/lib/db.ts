@@ -271,6 +271,8 @@ export const db = {
                     status: r.status,
                     studentId: r.studentId,
                     teacherId: r.teacherId,
+                    subject: r.subject,
+                    teacherName: r.teacherName,
                 }));
             } catch (err) {
                 console.error('MongoDB unavailable, falling back to data/attendance.json:', err);
@@ -278,7 +280,14 @@ export const db = {
                 try {
                     const text = await fs.readFile(file, 'utf-8');
                     const local: any[] = JSON.parse(text || '[]');
-                    return local.map(r => ({ date: r.date, status: r.status, studentId: r.studentId, teacherId: r.teacherId }));
+                    return local.map(r => ({
+                        date: r.date,
+                        status: r.status,
+                        studentId: r.studentId,
+                        teacherId: r.teacherId,
+                        subject: r.subject,
+                        teacherName: r.teacherName,
+                    }));
                 } catch (fileErr) {
                     console.error('Failed to read local attendance.json fallback:', fileErr);
                     return [];
@@ -318,6 +327,11 @@ export const db = {
                     startTime: e.startTime,
                     endTime: e.endTime,
                     teacherId: e.teacherId,
+                    isCancelled: !!e.isCancelled,
+                    cancelledAt: e.cancelledAt
+                        ? (e.cancelledAt instanceof Date ? e.cancelledAt.toISOString() : new Date(e.cancelledAt).toISOString())
+                        : undefined,
+                    cancelReason: e.cancelReason,
                 }));
             } catch (err) {
                 console.error('MongoDB unavailable, falling back to data/timetable.json:', err);
@@ -325,7 +339,17 @@ export const db = {
                 try {
                     const text = await fs.readFile(file, 'utf-8');
                     const local: any[] = JSON.parse(text || '[]');
-                    return local.map(e => ({ id: e.id, subject: e.subject, day: e.day, startTime: e.startTime, endTime: e.endTime, teacherId: e.teacherId }));
+                    return local.map(e => ({
+                        id: e.id,
+                        subject: e.subject,
+                        day: e.day,
+                        startTime: e.startTime,
+                        endTime: e.endTime,
+                        teacherId: e.teacherId,
+                        isCancelled: !!e.isCancelled,
+                        cancelledAt: e.cancelledAt,
+                        cancelReason: e.cancelReason,
+                    }));
                 } catch (fileErr) {
                     console.error('Failed to read local timetable.json fallback:', fileErr);
                     return [];

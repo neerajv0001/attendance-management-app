@@ -31,6 +31,8 @@ export interface AttendanceRecord {
   status: 'PRESENT' | 'ABSENT';
   studentId: string;
   teacherId?: string;
+  subject?: string;
+  teacherName?: string;
 }
 
 export interface TimetableEntry {
@@ -40,6 +42,9 @@ export interface TimetableEntry {
   startTime: string;
   endTime: string;
   teacherId: string;
+  isCancelled?: boolean;
+  cancelledAt?: string;
+  cancelReason?: string;
 }
 
 export interface Course {

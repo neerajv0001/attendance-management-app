@@ -12,6 +12,7 @@ export default function TeacherAttendance() {
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState<any[]>([]);
   const [selectedClass, setSelectedClass] = useState('');
+  const [teacherMeta, setTeacherMeta] = useState<{ name: string; subject: string }>({ name: '', subject: '' });
   const toast = useToast();
 
   const refreshCourses = useCallback(async () => {
@@ -29,10 +30,15 @@ export default function TeacherAttendance() {
   useEffect(() => {
     Promise.all([
       fetch('/api/students', { cache: 'no-store' }).then(r => r.json()),
-      fetch('/api/courses', { cache: 'no-store' }).then(r => r.json())
-    ]).then(([studs, courses]) => {
+      fetch('/api/courses', { cache: 'no-store' }).then(r => r.json()),
+      fetch('/api/user/settings', { cache: 'no-store' }).then(r => r.json()).catch(() => ({}))
+    ]).then(([studs, courses, user]) => {
       setStudents(studs || []);
       setCourses(Array.isArray(courses) ? courses : []);
+      setTeacherMeta({
+        name: typeof user?.name === 'string' ? user.name : '',
+        subject: typeof user?.subject === 'string' ? user.subject : '',
+      });
       const initialStatus: Record<string, string> = {};
       (studs || []).forEach((s: any) => initialStatus[s.id] = '');
       setAttendance(initialStatus);
@@ -73,7 +79,9 @@ export default function TeacherAttendance() {
   const handleSubmit = async () => {
     const records = Object.entries(attendance).map(([studentId, status]) => ({
       studentId,
-      status: status === 'PRESENT' ? 'PRESENT' : 'ABSENT'
+      status: status === 'PRESENT' ? 'PRESENT' : 'ABSENT',
+      subject: teacherMeta.subject || 'General',
+      teacherName: teacherMeta.name || undefined,
     }));
     const res = await fetch('/api/attendance', {
       method: 'POST',
@@ -152,20 +160,20 @@ export default function TeacherAttendance() {
                 <td style={{ padding: '10px' }}>
                   <div style={{ display: 'flex', gap: 8 }}>
                     <button
-                      className={`btn btn-sm ${attendance[student.id] === 'PRESENT' ? '' : 'btn-outline'}`}
+                      className={`btn btn-sm attendance-status-btn attendance-present ${attendance[student.id] === 'PRESENT' ? 'active' : ''}`}
                       onClick={() => setStatus(student.id, 'PRESENT')}
                       aria-pressed={attendance[student.id] === 'PRESENT'}
                       aria-label={`Mark ${student.name} present`}
-                      style={{ minWidth: 84, padding: '6px 10px', backgroundColor: attendance[student.id] === 'PRESENT' ? '#28a745' : 'transparent', color: attendance[student.id] === 'PRESENT' ? '#fff' : '#28a745', borderColor: attendance[student.id] === 'PRESENT' ? 'transparent' : '#28a745' }}
+                      style={{ minWidth: 84, padding: '6px 10px' }}
                     >
                       Present
                     </button>
                     <button
-                      className={`btn btn-sm ${attendance[student.id] === 'ABSENT' ? '' : 'btn-outline'}`}
+                      className={`btn btn-sm attendance-status-btn attendance-absent ${attendance[student.id] === 'ABSENT' ? 'active' : ''}`}
                       onClick={() => setStatus(student.id, 'ABSENT')}
                       aria-pressed={attendance[student.id] === 'ABSENT'}
                       aria-label={`Mark ${student.name} absent`}
-                      style={{ minWidth: 84, padding: '6px 10px', backgroundColor: attendance[student.id] === 'ABSENT' ? '#dc3545' : 'transparent', color: attendance[student.id] === 'ABSENT' ? '#fff' : '#dc3545', borderColor: attendance[student.id] === 'ABSENT' ? 'transparent' : '#dc3545' }}
+                      style={{ minWidth: 84, padding: '6px 10px' }}
                       >
                       Absent
                     </button>

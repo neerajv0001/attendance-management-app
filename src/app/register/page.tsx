@@ -5,6 +5,7 @@ import { useToast } from '@/components/ToastProvider';
 import { useRouter } from 'next/navigation';
 
 export default function RegisterPage() {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +25,7 @@ export default function RegisterPage() {
 
   const canGoNext = Boolean(
     formData.name.trim() &&
-    /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.email.trim()) &&
+    emailPattern.test(formData.email.trim()) &&
     /^\d{10}$/.test(formData.phone)
   );
 
@@ -32,8 +33,8 @@ export default function RegisterPage() {
     if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim()) {
       return;
     }
-    if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(formData.email.trim())) {
-      toast.showToast?.('Please enter a valid Gmail address (example@gmail.com)', 'error');
+    if (!emailPattern.test(formData.email.trim())) {
+      toast.showToast?.('Please enter a valid email (example@domain.com)', 'error');
       return;
     }
     if (!canGoNext) {
@@ -163,23 +164,23 @@ export default function RegisterPage() {
                     type="email"
                     className="form-control auth-field"
                     required
-                    pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="example@gmail.com"
+                    placeholder="example@domain.com"
                   />
                 </div>
 
                 <div className="input-group auth-input-group">
                   <label>Phone Number</label>
                   <input
-                    type="tel"
+                    type="text"
                     className="form-control auth-field"
                     required
-                    inputMode="numeric"
-                    pattern="[0-9]{10}"
+                    inputMode="tel"
+                    pattern="[0-9]*"
                     maxLength={10}
-                    minLength={10}
+                    autoComplete="tel"
                     value={formData.phone}
                     onChange={(e) =>
                       setFormData({

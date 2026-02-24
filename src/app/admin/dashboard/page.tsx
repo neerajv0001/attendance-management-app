@@ -40,7 +40,23 @@ export default function AdminDashboard() {
       }
     };
     window.addEventListener('attendance:update', onUpdate as any);
-    return () => window.removeEventListener('attendance:update', onUpdate as any);
+    let bc: BroadcastChannel | null = null;
+    try {
+      bc = new BroadcastChannel('attendance_channel');
+      bc.onmessage = (ev) => {
+        const msg = ev?.data;
+        if (!msg) return;
+        if (msg.type === 'courses_updated' || msg.type === 'students_updated' || msg.type === 'teachers_updated') {
+          loadStats();
+        }
+      };
+    } catch (e) {
+      bc = null;
+    }
+    return () => {
+      window.removeEventListener('attendance:update', onUpdate as any);
+      try { if (bc) bc.close(); } catch (e) {}
+    };
   }, [loadStats]);
 
   if (loading) {

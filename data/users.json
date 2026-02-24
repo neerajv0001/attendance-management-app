@@ -1,5 +1,55 @@
 [
   {
+    "id": "teacher-1771902560494",
+    "username": "teacher2@test.com",
+    "passwordHash": "$2b$10$a77iit12fWcw5CTIE21deucH7GTYpV0AxzzGFaLloiWFRLAyGVvwW",
+    "role": "TEACHER",
+    "name": "Deore Dnyneshwar",
+    "email": "teacher3@test.com",
+    "phone": "1234567899",
+    "qualification": "M.Sc",
+    "experience": "8",
+    "subject": "IT Act & Cyber Law",
+    "courseId": "course-1771404653962",
+    "isApproved": true,
+    "createdAt": "2026-02-24T03:09:20.495Z"
+  },
+  {
+    "id": "teacher-1771864876446",
+    "username": "teacher1@test.com",
+    "passwordHash": "$2b$10$sIZ089GMaefRkH3CSUW92.sPpzV9d6Tz10IQ351Vx7v8fnAE8a/7q",
+    "role": "TEACHER",
+    "name": "Soni Singh",
+    "email": "soni@test.com",
+    "phone": "1234567899",
+    "qualification": "M tech ",
+    "experience": "4",
+    "subject": "Fundamental Of GIS",
+    "courseId": "course-1771404653962",
+    "isApproved": true,
+    "createdAt": "2026-02-23T16:41:16.446Z"
+  },
+  {
+    "id": "STU2026848",
+    "username": "STU2026848",
+    "passwordHash": "$2b$10$05vRFe/aE/tkRdfJwT357ukpd4jxroANwgaE5R9/Yf/YqKQ73WZ46",
+    "role": "STUDENT",
+    "name": "sudhal ",
+    "email": "",
+    "department": "Bsc IT",
+    "createdAt": "2026-02-23T14:40:09.057Z"
+  },
+  {
+    "id": "STU2026241",
+    "username": "STU2026241",
+    "passwordHash": "$2b$10$xRIrEBwSiEHGw0v8WOuupepZ9/Dva8N3o8.vH/P/Y/Rjv84oolNUK",
+    "role": "STUDENT",
+    "name": "abhishek sheikh",
+    "email": "",
+    "department": "Bsc IT",
+    "createdAt": "2026-02-23T09:11:55.530Z"
+  },
+  {
     "id": "STU2026502",
     "username": "STU2026502",
     "passwordHash": "$2b$10$u6YPSbwPBRwgFRd4PO8f5uwezWE6YxZPrLmpAw8pjrukb/oWMgOs6",
@@ -22,11 +72,11 @@
     "username": "teacher@test.com",
     "passwordHash": "$2b$10$FFKSDcq8nKjlNJx7nDe4J.d3nbUa331B0cJPGgRanQWaEQBF0mXYS",
     "role": "TEACHER",
-    "name": "raju ",
-    "email": "teacher@test.com",
+    "name": "vanita sharma",
+    "email": "vanitasharma@test.com",
     "qualification": "M tech",
     "experience": "6",
-    "subject": "Bussiness Intelligence ",
+    "subject": "Software Testing & Quality Assurance",
     "courseId": "course-1771404653962",
     "isApproved": true,
     "createdAt": "2026-02-18T11:17:09.408Z"
@@ -37,7 +87,7 @@
     "passwordHash": "$2b$10$NxphPDuk120W5Tif6mMqbeUnQE2oPZPiZJmtn9SWCerUw.iuaOW/a",
     "role": "STUDENT",
     "name": "neeraj vishwakarma ",
-    "email": "",
+    "email": "neerajv514403@gmail.com",
     "department": "Bsc IT",
     "createdAt": "2026-02-18T12:50:14.126Z"
   }

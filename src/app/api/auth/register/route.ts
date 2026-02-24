@@ -11,8 +11,8 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
         }
 
-        if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(String(email).trim())) {
-            return NextResponse.json({ error: 'Please enter a valid Gmail address' }, { status: 400 });
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).trim())) {
+            return NextResponse.json({ error: 'Please enter a valid email address' }, { status: 400 });
         }
 
         if (!/^\d{10}$/.test(String(phone))) {

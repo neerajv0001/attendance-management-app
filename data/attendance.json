@@ -1,2186 +1,2262 @@
 [
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "ABSENT",
     "studentId": "2UD2YX",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "ABSENT",
     "studentId": "55GHAU",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "ABSENT",
     "studentId": "OXZUHY",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-12",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "ABSENT",
     "studentId": "VJXUUJ",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "ABSENT",
     "studentId": "55GHAU",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "ABSENT",
     "studentId": "Z8K19B",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "ABSENT",
     "studentId": "T6HHJ1",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-11",
-    "status": "ABSENT",
     "studentId": "O9J0CP",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "ABSENT",
     "studentId": "PSX03O",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "ABSENT",
     "studentId": "8TOIRD",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "ABSENT",
     "studentId": "AU3RN4",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-10",
-    "status": "ABSENT",
     "studentId": "O9J0CP",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "ABSENT",
     "studentId": "AU3RN4",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-09",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "ABSENT",
     "studentId": "Z75NM4",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "ABSENT",
     "studentId": "OFTHCD",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-06",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "ABSENT",
     "studentId": "7HMB7W",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "ABSENT",
     "studentId": "T6HHJ1",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-05",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "ABSENT",
     "studentId": "VJXUUJ",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "ABSENT",
     "studentId": "8TOIRD",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-04",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "ABSENT",
     "studentId": "VJXUUJ",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "ABSENT",
     "studentId": "7I3UA7",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "ABSENT",
     "studentId": "OXZUHY",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-03",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-02",
-    "status": "ABSENT",
     "studentId": "PSX03O",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-02",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-02",
-    "status": "ABSENT",
     "studentId": "2UD2YX",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-02",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-02",
-    "status": "ABSENT",
     "studentId": "8TOIRD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "AU3RN4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "Z75NM4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "55GHAU",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "Z8K19B",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "7I3UA7",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "OFTHCD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "OXZUHY",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
-    "status": "PRESENT",
-    "studentId": "EP280M",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-02-02",
     "status": "ABSENT",
-    "studentId": "T6HHJ1",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-02",
+    "studentId": "AU3RN4",
     "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "Z75NM4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "55GHAU",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "Z8K19B",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "7I3UA7",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "OFTHCD",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "OXZUHY",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "EP280M",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
+    "studentId": "T6HHJ1",
+    "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-02-02",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "ABSENT",
     "studentId": "VJXUUJ",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-30",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "PRESENT",
     "studentId": "EP280M",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-29",
     "status": "PRESENT",
-    "studentId": "T6HHJ1",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-29",
-    "status": "ABSENT",
+    "studentId": "T6HHJ1",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-29",
     "studentId": "O9J0CP",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-28",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "ABSENT",
     "studentId": "PSX03O",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
-    "status": "PRESENT",
-    "studentId": "VJXUUJ",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
-    "status": "PRESENT",
-    "studentId": "2UD2YX",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
-    "status": "PRESENT",
-    "studentId": "7HMB7W",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
-    "status": "PRESENT",
-    "studentId": "8TOIRD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
-    "status": "PRESENT",
-    "studentId": "AU3RN4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
-    "status": "PRESENT",
-    "studentId": "Z75NM4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-27",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
+    "studentId": "VJXUUJ",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
+    "studentId": "2UD2YX",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
+    "studentId": "7HMB7W",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
+    "studentId": "8TOIRD",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
+    "studentId": "AU3RN4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
+    "studentId": "Z75NM4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-27",
     "studentId": "55GHAU",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-27",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "ABSENT",
     "studentId": "VJXUUJ",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "ABSENT",
     "studentId": "Z8K19B",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-26",
-    "status": "ABSENT",
     "studentId": "OXZUHY",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-26",
-    "status": "PRESENT",
-    "studentId": "EP280M",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-26",
-    "status": "PRESENT",
-    "studentId": "T6HHJ1",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-26",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-26",
+    "studentId": "EP280M",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-26",
+    "studentId": "T6HHJ1",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-26",
     "studentId": "O9J0CP",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "ABSENT",
     "studentId": "8TOIRD",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-23",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "ABSENT",
     "studentId": "AU3RN4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-22",
-    "status": "PRESENT",
-    "studentId": "Z75NM4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-22",
-    "status": "PRESENT",
-    "studentId": "55GHAU",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-22",
-    "status": "PRESENT",
-    "studentId": "Z8K19B",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-22",
-    "status": "PRESENT",
-    "studentId": "7I3UA7",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-22",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-22",
+    "studentId": "Z75NM4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-22",
+    "studentId": "55GHAU",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-22",
+    "studentId": "Z8K19B",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-22",
+    "studentId": "7I3UA7",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-22",
     "studentId": "OFTHCD",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-22",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "ABSENT",
     "studentId": "2UD2YX",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-21",
-    "status": "PRESENT",
-    "studentId": "7HMB7W",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-21",
-    "status": "PRESENT",
-    "studentId": "8TOIRD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-21",
-    "status": "PRESENT",
-    "studentId": "AU3RN4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-21",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-21",
+    "studentId": "7HMB7W",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-21",
+    "studentId": "8TOIRD",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-21",
+    "studentId": "AU3RN4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-21",
     "studentId": "Z75NM4",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-21",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "ABSENT",
     "studentId": "PSX03O",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "ABSENT",
     "studentId": "2UD2YX",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-20",
-    "status": "PRESENT",
-    "studentId": "7HMB7W",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-20",
-    "status": "PRESENT",
-    "studentId": "8TOIRD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-20",
-    "status": "PRESENT",
-    "studentId": "AU3RN4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-20",
-    "status": "PRESENT",
-    "studentId": "Z75NM4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-20",
-    "status": "PRESENT",
-    "studentId": "55GHAU",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-20",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-20",
+    "studentId": "7HMB7W",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-20",
+    "studentId": "8TOIRD",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-20",
+    "studentId": "AU3RN4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-20",
+    "studentId": "Z75NM4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-20",
+    "studentId": "55GHAU",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-20",
     "studentId": "Z8K19B",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-20",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "AU3RN4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "ABSENT",
     "studentId": "7I3UA7",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-19",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "ABSENT",
     "studentId": "8TOIRD",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "ABSENT",
     "studentId": "AU3RN4",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-16",
-    "status": "ABSENT",
     "studentId": "7I3UA7",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-16",
-    "status": "PRESENT",
-    "studentId": "OFTHCD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-16",
-    "status": "PRESENT",
-    "studentId": "OXZUHY",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-16",
-    "status": "PRESENT",
-    "studentId": "EP280M",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-16",
-    "status": "PRESENT",
-    "studentId": "T6HHJ1",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-16",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-16",
+    "studentId": "OFTHCD",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-16",
+    "studentId": "OXZUHY",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-16",
+    "studentId": "EP280M",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-16",
+    "studentId": "T6HHJ1",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-16",
     "studentId": "O9J0CP",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "8TOIRD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "ABSENT",
     "studentId": "AU3RN4",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "Z75NM4",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "55GHAU",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "ABSENT",
     "studentId": "OFTHCD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-15",
-    "status": "PRESENT",
-    "studentId": "OXZUHY",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-15",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-15",
+    "studentId": "OXZUHY",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-15",
     "studentId": "EP280M",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-15",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "PSX03O",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "VJXUUJ",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "2UD2YX",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "7HMB7W",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "ABSENT",
     "studentId": "8TOIRD",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-14",
-    "status": "PRESENT",
-    "studentId": "AU3RN4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-14",
-    "status": "PRESENT",
-    "studentId": "Z75NM4",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-14",
-    "status": "PRESENT",
-    "studentId": "55GHAU",
-    "teacherId": "teacher-dummy-0"
-  },
-  {
-    "date": "2026-01-14",
     "status": "ABSENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-14",
+    "studentId": "AU3RN4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-14",
+    "studentId": "Z75NM4",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-14",
+    "studentId": "55GHAU",
+    "status": "PRESENT",
+    "teacherId": "teacher-dummy-0"
+  },
+  {
+    "date": "2026-01-14",
     "studentId": "Z8K19B",
+    "status": "ABSENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-01-14",
-    "status": "PRESENT",
     "studentId": "O9J0CP",
+    "status": "PRESENT",
     "teacherId": "teacher-dummy-0"
   },
   {
     "date": "2026-02-18",
-    "status": "PRESENT",
     "studentId": "Z8K19B",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-18",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-18",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-18",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-16",
-    "status": "PRESENT",
     "studentId": "7I3UA7",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-16",
-    "status": "PRESENT",
     "studentId": "OFTHCD",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-16",
-    "status": "PRESENT",
     "studentId": "OXZUHY",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-16",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-16",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-17",
-    "status": "PRESENT",
     "studentId": "EP280M",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-17",
-    "status": "ABSENT",
     "studentId": "T6HHJ1",
+    "status": "ABSENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-18",
-    "status": "ABSENT",
     "studentId": "EP280M",
+    "status": "ABSENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-18",
-    "status": "PRESENT",
     "studentId": "T6HHJ1",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-16",
-    "status": "PRESENT",
     "studentId": "STU2026807",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-18",
-    "status": "PRESENT",
     "studentId": "STU2026807",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-17",
-    "status": "ABSENT",
     "studentId": "STU2026807",
+    "status": "ABSENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-19",
-    "status": "ABSENT",
     "studentId": "STU2026324",
+    "status": "ABSENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-20",
-    "status": "PRESENT",
     "studentId": "STU2026324",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-20",
-    "status": "PRESENT",
     "studentId": "STU2026502",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-20",
-    "status": "PRESENT",
     "studentId": "STU2026604",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-20",
-    "status": "PRESENT",
     "studentId": "STU2026807",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-21",
-    "status": "ABSENT",
     "studentId": "STU2026502",
-    "teacherId": "teacher-1771413429408"
-  },
-  {
-    "date": "2026-02-21",
-    "status": "PRESENT",
-    "studentId": "STU2026604",
-    "teacherId": "teacher-1771413429408"
-  },
-  {
-    "date": "2026-02-21",
     "status": "ABSENT",
+    "teacherId": "teacher-1771413429408"
+  },
+  {
+    "date": "2026-02-21",
+    "studentId": "STU2026604",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408"
+  },
+  {
+    "date": "2026-02-21",
     "studentId": "STU2026807",
+    "status": "ABSENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-22",
-    "status": "PRESENT",
     "studentId": "STU2026660",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-22",
-    "status": "PRESENT",
     "studentId": "STU2026502",
-    "teacherId": "teacher-1771413429408"
-  },
-  {
-    "date": "2026-02-22",
     "status": "PRESENT",
-    "studentId": "STU2026604",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-22",
-    "status": "ABSENT",
+    "studentId": "STU2026604",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408"
+  },
+  {
+    "date": "2026-02-22",
     "studentId": "STU2026807",
+    "status": "ABSENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-23",
-    "status": "PRESENT",
     "studentId": "STU2026604",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-19",
-    "status": "PRESENT",
     "studentId": "STU2026502",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
     "date": "2026-02-19",
-    "status": "PRESENT",
     "studentId": "STU2026807",
+    "status": "PRESENT",
     "teacherId": "teacher-1771413429408"
   },
   {
+    "date": "2026-02-23",
     "studentId": "STU2026265",
     "status": "PRESENT",
-    "date": "2026-02-23",
     "teacherId": "teacher-1771413429408"
   },
   {
+    "date": "2026-02-23",
+    "studentId": "STU2026848",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408"
+  },
+  {
+    "date": "2026-02-23",
+    "studentId": "STU2026241",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408"
+  },
+  {
+    "date": "2026-02-23",
     "studentId": "STU2026502",
     "status": "PRESENT",
-    "date": "2026-02-23",
     "teacherId": "teacher-1771413429408"
   },
   {
+    "date": "2026-02-23",
     "studentId": "STU2026807",
     "status": "PRESENT",
-    "date": "2026-02-23",
     "teacherId": "teacher-1771413429408"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026848",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771864876446",
+    "subject": "Fundamental Of GIS",
+    "teacherName": "Soni Singh"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026241",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771864876446",
+    "subject": "Fundamental Of GIS",
+    "teacherName": "Soni Singh"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026502",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771864876446",
+    "subject": "Fundamental Of GIS",
+    "teacherName": "Soni Singh"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026807",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771864876446",
+    "subject": "Fundamental Of GIS",
+    "teacherName": "Soni Singh"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026848",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771902560494",
+    "subject": "IT Act & Cyber Law",
+    "teacherName": "Deore Dnyneshwar"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026241",
+    "status": "ABSENT",
+    "teacherId": "teacher-1771902560494",
+    "subject": "IT Act & Cyber Law",
+    "teacherName": "Deore Dnyneshwar"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026502",
+    "status": "ABSENT",
+    "teacherId": "teacher-1771902560494",
+    "subject": "IT Act & Cyber Law",
+    "teacherName": "Deore Dnyneshwar"
+  },
+  {
+    "date": "2026-02-24",
+    "studentId": "STU2026807",
+    "status": "ABSENT",
+    "teacherId": "teacher-1771902560494",
+    "subject": "IT Act & Cyber Law",
+    "teacherName": "Deore Dnyneshwar"
   }
 ]
