@@ -2362,5 +2362,101 @@
     "teacherId": "teacher-1771413429408",
     "subject": "Software Testing & Quality Assurance",
     "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-25",
+    "studentId": "STU2026152",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-25",
+    "studentId": "STU2026180",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-25",
+    "studentId": "STU2026932",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-25",
+    "studentId": "STU2026848",
+    "status": "ABSENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-25",
+    "studentId": "STU2026502",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-25",
+    "studentId": "STU2026807",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-28",
+    "studentId": "STU2026152",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-28",
+    "studentId": "STU2026180",
+    "status": "ABSENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-28",
+    "studentId": "STU2026932",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-28",
+    "studentId": "STU2026848",
+    "status": "ABSENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-28",
+    "studentId": "STU2026502",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
+  },
+  {
+    "date": "2026-02-28",
+    "studentId": "STU2026807",
+    "status": "PRESENT",
+    "teacherId": "teacher-1771413429408",
+    "subject": "Software Testing & Quality Assurance",
+    "teacherName": "vanita sharma"
   }
 ]

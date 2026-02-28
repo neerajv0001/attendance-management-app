@@ -17,7 +17,9 @@
     "endTime": "02:30",
     "teacherId": "teacher-1771413429408",
     "isLunchBreak": false,
-    "isCancelled": false
+    "isCancelled": true,
+    "cancelledAt": "2026-02-28T14:39:12.716Z",
+    "cancelReason": "Cancelled by teacher"
   },
   {
     "id": "tt-1771860540504",

@@ -1,4 +1,4 @@
-import { User, UserRole, Course, AttendanceRecord, TimetableEntry } from './types';
+import { User, UserRole, Course, AttendanceRecord, TimetableEntry, Notice } from './types';
 import bcrypt from 'bcryptjs';
 import fs from 'fs/promises';
 import path from 'path';
@@ -389,93 +389,91 @@ export const db = {
                 }
             }
         },
-    }
-};
-
-// Notices are stored similarly to other resources with Mongo fallback to JSON file
-db['notices'] = {
-    getAll: async (): Promise<import('./types').Notice[]> => {
-        try {
-            const conn = await connectDB();
-            if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
-            const list = await NoticeModel.find().sort({ createdAt: -1 }).lean();
-            return list.map(n => ({ id: n.id, title: n.title, message: n.message, authorId: n.authorId, createdAt: (n.createdAt instanceof Date) ? n.createdAt.toISOString() : new Date(n.createdAt).toISOString() }));
-        } catch (err) {
-            console.error('MongoDB unavailable, falling back to data/notices.json:', err);
-            const file = path.join(process.cwd(), 'data', 'notices.json');
-            try {
-                const text = await fs.readFile(file, 'utf-8');
-                const local: any[] = JSON.parse(text || '[]');
-                return local.map(n => ({ id: n.id, title: n.title, message: n.message, authorId: n.authorId, createdAt: typeof n.createdAt === 'string' ? n.createdAt : new Date(n.createdAt).toISOString() }));
-            } catch (fileErr) {
-                console.error('Failed to read local notices.json fallback:', fileErr);
-                return [];
-            }
-        }
     },
-    create: async (notice: import('./types').Notice) => {
-        try {
-            const conn = await connectDB();
-            if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
-            await NoticeModel.create({ id: notice.id, title: notice.title, message: notice.message, authorId: notice.authorId, createdAt: new Date(notice.createdAt) });
-            return notice;
-        } catch (err) {
-            console.warn('MongoDB unavailable, creating notice in data/notices.json fallback:', err);
-            const file = path.join(process.cwd(), 'data', 'notices.json');
+    notices: {
+        getAll: async (): Promise<Notice[]> => {
             try {
-                const text = await fs.readFile(file, 'utf-8');
-                const local: any[] = JSON.parse(text || '[]');
-                local.unshift(notice);
-                await fs.writeFile(file, JSON.stringify(local, null, 2), 'utf-8');
+                const conn = await connectDB();
+                if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
+                const list = await NoticeModel.find().sort({ createdAt: -1 }).lean();
+                return list.map(n => ({ id: n.id, title: n.title, message: n.message, authorId: n.authorId, createdAt: (n.createdAt instanceof Date) ? n.createdAt.toISOString() : new Date(n.createdAt).toISOString() }));
+            } catch (err) {
+                console.error('MongoDB unavailable, falling back to data/notices.json:', err);
+                const file = path.join(process.cwd(), 'data', 'notices.json');
+                try {
+                    const text = await fs.readFile(file, 'utf-8');
+                    const local: any[] = JSON.parse(text || '[]');
+                    return local.map(n => ({ id: n.id, title: n.title, message: n.message, authorId: n.authorId, createdAt: typeof n.createdAt === 'string' ? n.createdAt : new Date(n.createdAt).toISOString() }));
+                } catch (fileErr) {
+                    console.error('Failed to read local notices.json fallback:', fileErr);
+                    return [];
+                }
+            }
+        },
+        create: async (notice: Notice) => {
+            try {
+                const conn = await connectDB();
+                if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
+                await NoticeModel.create({ id: notice.id, title: notice.title, message: notice.message, authorId: notice.authorId, createdAt: new Date(notice.createdAt) });
                 return notice;
-            } catch (fileErr) {
-                console.error('Failed to create notice in local fallback:', fileErr);
-                throw fileErr;
+            } catch (err) {
+                console.warn('MongoDB unavailable, creating notice in data/notices.json fallback:', err);
+                const file = path.join(process.cwd(), 'data', 'notices.json');
+                try {
+                    const text = await fs.readFile(file, 'utf-8');
+                    const local: any[] = JSON.parse(text || '[]');
+                    local.unshift(notice);
+                    await fs.writeFile(file, JSON.stringify(local, null, 2), 'utf-8');
+                    return notice;
+                } catch (fileErr) {
+                    console.error('Failed to create notice in local fallback:', fileErr);
+                    throw fileErr;
+                }
             }
-        }
-    },
-    update: async (noticeId: string, updates: Partial<import('./types').Notice>) => {
-        try {
-            const conn = await connectDB();
-            if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
-            const updateData: any = { ...updates };
-            if (updates.createdAt) updateData.createdAt = new Date(updates.createdAt);
-            const doc = await NoticeModel.findOneAndUpdate({ id: noticeId }, updateData, { new: true }).lean();
-            if (!doc) throw new Error('Notice not found');
-            return { id: doc.id, title: doc.title, message: doc.message, authorId: doc.authorId, createdAt: (doc.createdAt instanceof Date) ? doc.createdAt.toISOString() : new Date(doc.createdAt).toISOString() };
-        } catch (err) {
-            console.warn('MongoDB unavailable, updating notice in data/notices.json fallback:', err);
-            const file = path.join(process.cwd(), 'data', 'notices.json');
+        },
+        update: async (noticeId: string, updates: Partial<Notice>) => {
             try {
-                const text = await fs.readFile(file, 'utf-8');
-                const local: any[] = JSON.parse(text || '[]');
-                const idx = local.findIndex(n => n.id === noticeId);
-                if (idx === -1) throw new Error('Notice not found');
-                local[idx] = { ...local[idx], ...updates };
-                await fs.writeFile(file, JSON.stringify(local, null, 2), 'utf-8');
-                return local[idx];
-            } catch (fileErr) {
-                console.error('Failed to update notice in local fallback:', fileErr);
-                throw fileErr;
+                const conn = await connectDB();
+                if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
+                const updateData: any = { ...updates };
+                if (updates.createdAt) updateData.createdAt = new Date(updates.createdAt);
+                const doc = await NoticeModel.findOneAndUpdate({ id: noticeId }, updateData, { new: true }).lean();
+                if (!doc) throw new Error('Notice not found');
+                return { id: doc.id, title: doc.title, message: doc.message, authorId: doc.authorId, createdAt: (doc.createdAt instanceof Date) ? doc.createdAt.toISOString() : new Date(doc.createdAt).toISOString() };
+            } catch (err) {
+                console.warn('MongoDB unavailable, updating notice in data/notices.json fallback:', err);
+                const file = path.join(process.cwd(), 'data', 'notices.json');
+                try {
+                    const text = await fs.readFile(file, 'utf-8');
+                    const local: any[] = JSON.parse(text || '[]');
+                    const idx = local.findIndex(n => n.id === noticeId);
+                    if (idx === -1) throw new Error('Notice not found');
+                    local[idx] = { ...local[idx], ...updates };
+                    await fs.writeFile(file, JSON.stringify(local, null, 2), 'utf-8');
+                    return local[idx];
+                } catch (fileErr) {
+                    console.error('Failed to update notice in local fallback:', fileErr);
+                    throw fileErr;
+                }
             }
-        }
-    },
-    delete: async (noticeId: string) => {
-        try {
-            const conn = await connectDB();
-            if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
-            await NoticeModel.deleteOne({ id: noticeId });
-        } catch (err) {
-            console.warn('MongoDB unavailable, deleting notice in data/notices.json fallback:', err);
-            const file = path.join(process.cwd(), 'data', 'notices.json');
+        },
+        delete: async (noticeId: string) => {
             try {
-                const text = await fs.readFile(file, 'utf-8');
-                const local: any[] = JSON.parse(text || '[]');
-                const filtered = local.filter(n => n.id !== noticeId);
-                await fs.writeFile(file, JSON.stringify(filtered, null, 2), 'utf-8');
-            } catch (fileErr) {
-                console.error('Failed to delete notice in local fallback:', fileErr);
-                throw fileErr;
+                const conn = await connectDB();
+                if (!conn || !isMongoAvailable()) throw new Error('Mongo unavailable');
+                await NoticeModel.deleteOne({ id: noticeId });
+            } catch (err) {
+                console.warn('MongoDB unavailable, deleting notice in data/notices.json fallback:', err);
+                const file = path.join(process.cwd(), 'data', 'notices.json');
+                try {
+                    const text = await fs.readFile(file, 'utf-8');
+                    const local: any[] = JSON.parse(text || '[]');
+                    const filtered = local.filter(n => n.id !== noticeId);
+                    await fs.writeFile(file, JSON.stringify(filtered, null, 2), 'utf-8');
+                } catch (fileErr) {
+                    console.error('Failed to delete notice in local fallback:', fileErr);
+                    throw fileErr;
+                }
             }
         }
     }

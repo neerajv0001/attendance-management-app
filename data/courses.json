@@ -13,6 +13,13 @@
   {
     "id": "course-1771404662498",
     "name": "Bsc CS",
+    "subjects": [
+      "maths"
+    ]
+  },
+  {
+    "id": "course-1772019204047",
+    "name": "bcom",
     "subjects": []
   }
 ]

@@ -1,5 +1,40 @@
 [
   {
+    "id": "teacher-1772289099509",
+    "username": "example@gmail.com",
+    "passwordHash": "$2b$10$MBqkrXDixW1NN//jKIF18Odx7kp1kqJBoBK7Im2umypa5q2Yl2KCu",
+    "role": "TEACHER",
+    "name": "Riya kumari",
+    "email": "example@gmail.com",
+    "phone": "1234567899",
+    "qualification": "M.tech",
+    "experience": "9",
+    "subject": "IT Act & Cyber Law",
+    "courseId": "course-1771404653962",
+    "isApproved": false,
+    "createdAt": "2026-02-28T14:31:39.509Z"
+  },
+  {
+    "id": "STU2026152",
+    "username": "STU2026152",
+    "passwordHash": "$2b$10$MbuqhEkbX3zy7Zzw3aC6PO1wrtHWjI.EFEundOlYt6X8dohn9PUD2",
+    "role": "STUDENT",
+    "name": "sheetal vishwakarma ",
+    "email": "",
+    "department": "Bsc CS",
+    "createdAt": "2026-02-25T13:49:41.351Z"
+  },
+  {
+    "id": "STU2026180",
+    "username": "STU2026180",
+    "passwordHash": "$2b$10$FmH..W/2xU5aakfPnRpNdemqgohke1Uz9pjZ9BIszSoRhVV.3LUwm",
+    "role": "STUDENT",
+    "name": "binit",
+    "email": "",
+    "department": "Bsc IT",
+    "createdAt": "2026-02-25T10:59:40.389Z"
+  },
+  {
     "id": "STU2026932",
     "username": "STU2026932",
     "passwordHash": "$2b$10$LIJT5BFD/z6jRYHBoVtkT.pHrFbEY4XjTNYyRknAAfikJeiUfxeAa",
@@ -18,10 +53,10 @@
     "email": "teacher5@test.com",
     "phone": "1234567899",
     "qualification": "M.Ed",
-    "experience": "12",
+    "experience": "15",
     "subject": "Bussiness Intelligence & Data Analysis",
     "courseId": "course-1771404653962",
-    "isApproved": false,
+    "isApproved": true,
     "createdAt": "2026-02-24T08:58:42.226Z"
   },
   {
@@ -59,7 +94,7 @@
     "username": "teacher2@test.com",
     "passwordHash": "$2b$10$sIZ089GMaefRkH3CSUW92.sPpzV9d6Tz10IQ351Vx7v8fnAE8a/7q",
     "role": "TEACHER",
-    "name": "Soni Singh",
+    "name": "Soni Yadav",
     "email": "teacher2@test.com",
     "phone": "1234567899",
     "qualification": "M tech ",
