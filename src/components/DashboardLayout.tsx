@@ -42,6 +42,9 @@ export default function DashboardLayout({ children, role }: { children: React.Re
         } else {
           toast.showToast?.(`Welcome back, ${obj.name}!`, 'success');
         }
+        // Open the mobile sidebar after login so users on phones see the nav
+        try { document.body.classList.add('sidebar-mobile-open'); } catch (e) {}
+        setSidebarOpen(true);
       }
     } catch (e) {
       // ignore
@@ -75,14 +78,15 @@ export default function DashboardLayout({ children, role }: { children: React.Re
        <div className="main-content">
          <header className="top-navbar">
           <button
-  className="menu-toggle"
-  onClick={() => {
-    try { document.body.classList.toggle('sidebar-mobile-open'); } catch (e) {}
-  }}
-  aria-label="Toggle menu"
-  title="Toggle menu"
-  style={{ background: 'transparent', border: 'none', padding: 8, cursor: 'pointer' }}
->
+            className="menu-toggle"
+            onClick={() => {
+              try { document.body.classList.toggle('sidebar-mobile-open'); } catch (e) {}
+              setSidebarOpen(s => !s);
+            }}
+            aria-label="Toggle menu"
+            title="Toggle menu"
+            style={{ background: 'transparent', border: 'none', padding: 8, cursor: 'pointer' }}
+          >
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M4 6h16M4 12h16M4 18h16" />
   </svg>
