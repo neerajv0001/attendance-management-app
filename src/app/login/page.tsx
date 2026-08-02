@@ -95,36 +95,42 @@ export default function LoginPage() {
             </div>
           )}
 
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleLogin} aria-labelledby="login-heading">
             <div className="input-group auth-input-group">
-              <label>Username, Email, or Student ID</label>
+              <label htmlFor="username">Username, Email, or Student ID</label>
               <input
+                id="username"
+                name="username"
                 type="text"
                 className="form-control auth-field"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
                 placeholder="Enter username, email, or student ID"
+                aria-required="true"
               />
             </div>
 
             <div className="input-group auth-input-group">
-              <label>Password</label>
+              <label htmlFor="password">Password</label>
               <div className="password-input-wrapper">
                 <input
+                  id="password"
+                  name="password"
                   type={showPassword ? 'text' : 'password'}
                   className="form-control auth-field"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="Enter your password"
-                  style={{ paddingRight: '60px' }}
+                  aria-required="true"
                 />
                 <button
                   type="button"
                   className="password-toggle auth-password-toggle"
                   onClick={() => setShowPassword(!showPassword)}
-                  tabIndex={-1}
+                  aria-pressed={showPassword}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? 'Hide' : 'Show'}
                 </button>
@@ -134,7 +140,7 @@ export default function LoginPage() {
             <button type="submit" className="btn btn-lg auth-submit" disabled={loading} style={{ width: '100%', marginTop: '10px' }}>
               {loading ? (
                 <>
-                  <span className="spinner" style={{ width: '20px', height: '20px', borderWidth: '2px', marginRight: '8px' }}></span>
+                  <span className="spinner" style={{ width: '20px', height: '20px', borderWidth: '2px', marginRight: '8px' }} role="status" aria-hidden="true"></span>
                   Signing in...
                 </>
               ) : (

@@ -178,32 +178,33 @@ export default function TeacherStudents() {
 
       {/* Inline alert banners removed in favor of toasts */}
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-          <input
-            placeholder="Search students by ID, name, email or class"
-            className="form-control"
-            value={query}
-            onChange={(e) => {
-              const q = e.target.value;
-              setQuery(q);
-              const key = q.trim().toLowerCase();
-              if (!key) setFiltered(students);
-              else setFiltered(students.filter(s => (
-                (s.id || '').toLowerCase().includes(key) ||
-                (s.name || '').toLowerCase().includes(key) ||
-                (s.email || '').toLowerCase().includes(key) ||
-                (s.department || '').toLowerCase().includes(key)
-              )));
-            }}
-            style={{ minWidth: '600px', maxWidth: '90%', flex: '0 0 600px', minHeight: 44, lineHeight: '1.4', padding: '10px 12px' }}
-          />
-        </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '16px', alignItems: 'stretch' }}>
+        <input
+          placeholder="Search students..."
+          className="form-control"
+          value={query}
+          onChange={(e) => {
+            const q = e.target.value;
+            setQuery(q);
+            const key = q.trim().toLowerCase();
+            if (!key) setFiltered(students);
+            else setFiltered(students.filter(s => (
+              (s.id || '').toLowerCase().includes(key) ||
+              (s.name || '').toLowerCase().includes(key) ||
+              (s.email || '').toLowerCase().includes(key) ||
+              (s.department || '').toLowerCase().includes(key)
+            )));
+          }}
+          style={{ minHeight: 44 }}
+        />
+        <Link href="/teacher/add-student" className="btn" style={{ width: '100%' }}>
+          Add Student
+        </Link>
       </div>
 
       {filtered.length > 0 ? (
-      <div className="card">
-          <div style={{ overflowX: 'auto' }}>
+        <div className="card">
+          <div className="table-container">
             <table className="data-table">
               <thead>
                 <tr>
@@ -217,18 +218,17 @@ export default function TeacherStudents() {
               <tbody>
                 {filtered.map(student => (
                   <tr key={student.id}>
-                    <td style={{ fontWeight: '600', fontFamily: 'monospace' }}>{student.id}</td>
+                    <td style={{ fontWeight: '500', fontFamily: 'monospace' }}>{student.id}</td>
                     <td style={{ fontWeight: '500' }}>{student.name}</td>
                     <td>{student.email || '-'}</td>
                     <td>{student.department || '-'}</td>
                     <td>
-                      <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
                         <button
                           className="btn btn-sm"
                           onClick={() => handleView(student)}
                           title={`View ${student.name}`}
                           aria-label={`View ${student.name}`}
-                          style={{ padding: '6px 10px', minWidth: 60, height: 32, borderRadius: 6 }}
                         >
                           View
                         </button>
@@ -237,37 +237,35 @@ export default function TeacherStudents() {
                           onClick={() => handleEdit(student)}
                           title={`Edit ${student.name}`}
                           aria-label={`Edit ${student.name}`}
-                          style={{ padding: '6px 8px', minWidth: 38, height: 32, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', borderRadius: 6 }}
                         >
-                          ✏️
+                          Edit
                         </button>
                         <button 
                           className="btn btn-sm btn-danger"
                           onClick={() => setDeleteConfirm(student.id)}
                           title={`Delete ${student.name}`}
                           aria-label={`Delete ${student.name}`}
-                          style={{ padding: '6px 10px', minWidth: 70, height: 32, borderRadius: 6 }}
                         >
                           Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                       </button>
+                     </div>
+                   </td>
+                 </tr>
+               ))}
+             </tbody>
+           </table>
+         </div>
+       </div>
       ) : (
-        <div className="card">
-          <div className="empty-state">
-            <div className="empty-state-icon">👨‍🎓</div>
-            <p>No students found.</p>
-            <Link href="/teacher/add-student" className="btn" style={{ marginTop: '16px' }}>
-              Add Your First Student
-            </Link>
-          </div>
-        </div>
+       <div className="card">
+         <div className="empty-state">
+           <div className="empty-state-icon">👨‍🎓</div>
+           <p>No students found.</p>
+           <Link href="/teacher/add-student" className="btn" style={{ marginTop: '16px' }}>
+             Add Your First Student
+           </Link>
+         </div>
+       </div>
       )}
 
       {/* Delete Confirmation Modal */}

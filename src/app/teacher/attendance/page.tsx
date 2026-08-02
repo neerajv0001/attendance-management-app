@@ -123,19 +123,31 @@ export default function TeacherAttendance() {
     setAttendance(prev => ({ ...prev, [studentId]: status }));
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <DashboardLayout role={UserRole.TEACHER}>
+        <div className="loading-container">
+          <div className="spinner"></div>
+          <p>Loading attendance...</p>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout role={UserRole.TEACHER}>
-      <h1 style={{ marginBottom: '20px', color: '#003366' }}>Mark Attendance</h1>
+      <div className="page-header">
+        <h1>Mark Attendance</h1>
+        <p>Record student attendance for {date || 'selected date'}</p>
+      </div>
       
-      <div className="card" style={{ maxWidth: '800px' }}>
-        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end', marginBottom: 12 }}>
-          <div className="input-group" style={{ minWidth: 160 }}>
+      <div className="card" style={{ maxWidth: '100%' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '16px', marginBottom: '20px' }}>
+          <div className="input-group">
             <label>Date</label>
             <input type="date" className="form-control" value={date} onChange={(e) => setDate(e.target.value)} />
           </div>
-          <div className="input-group" style={{ minWidth: 220 }}>
+          <div className="input-group">
             <label>Class</label>
             <select className="form-control" value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)}>
               <option value="">All Classes</option>
@@ -144,47 +156,47 @@ export default function TeacherAttendance() {
           </div>
         </div>
 
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ background: '#f4f7fa', textAlign: 'left' }}>
-              <th style={{ padding: '10px' }}>ID</th>
-              <th style={{ padding: '10px' }}>Name</th>
-              <th style={{ padding: '10px' }}>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {(selectedClass ? students.filter(s => s.department === selectedClass) : students).map(student => (
-              <tr key={student.id} style={{ borderBottom: '1px solid #eee' }}>
-                <td style={{ padding: '10px' }}>{student.id}</td>
-                <td style={{ padding: '10px' }}>{student.name}</td>
-                <td style={{ padding: '10px' }}>
-                  <div style={{ display: 'flex', gap: 8 }}>
-                    <button
-                      className={`btn btn-sm attendance-status-btn attendance-present ${attendance[student.id] === 'PRESENT' ? 'active' : ''}`}
-                      onClick={() => setStatus(student.id, 'PRESENT')}
-                      aria-pressed={attendance[student.id] === 'PRESENT'}
-                      aria-label={`Mark ${student.name} present`}
-                      style={{ minWidth: 84, padding: '6px 10px' }}
-                    >
-                      Present
-                    </button>
-                    <button
-                      className={`btn btn-sm attendance-status-btn attendance-absent ${attendance[student.id] === 'ABSENT' ? 'active' : ''}`}
-                      onClick={() => setStatus(student.id, 'ABSENT')}
-                      aria-pressed={attendance[student.id] === 'ABSENT'}
-                      aria-label={`Mark ${student.name} absent`}
-                      style={{ minWidth: 84, padding: '6px 10px' }}
-                      >
-                      Absent
-                    </button>
-                  </div>
-                </td>
+        <div className="table-container">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {(selectedClass ? students.filter(s => s.department === selectedClass) : students).map(student => (
+                <tr key={student.id}>
+                  <td style={{ fontWeight: '500' }}>{student.id}</td>
+                  <td>{student.name}</td>
+                  <td>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                      <button
+                        className={`btn btn-sm attendance-status-btn attendance-present ${attendance[student.id] === 'PRESENT' ? 'active' : ''}`}
+                        onClick={() => setStatus(student.id, 'PRESENT')}
+                        aria-pressed={attendance[student.id] === 'PRESENT'}
+                        aria-label={`Mark ${student.name} present`}
+                      >
+                        Present
+                      </button>
+                      <button
+                        className={`btn btn-sm attendance-status-btn attendance-absent ${attendance[student.id] === 'ABSENT' ? 'active' : ''}`}
+                        onClick={() => setStatus(student.id, 'ABSENT')}
+                        aria-pressed={attendance[student.id] === 'ABSENT'}
+                        aria-label={`Mark ${student.name} absent`}
+                      >
+                        Absent
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-        <div style={{ marginTop: '20px', textAlign: 'right' }}>
+        <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'flex-end' }}>
           <button onClick={handleSubmit} className="btn">Save Attendance</button>
         </div>
       </div>

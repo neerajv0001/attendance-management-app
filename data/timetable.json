@@ -32,16 +32,6 @@
     "isCancelled": false
   },
   {
-    "id": "tt-1771860670918",
-    "subject": "Software Testing & Quality Assurance",
-    "day": "Friday",
-    "startTime": "02:30",
-    "endTime": "03:10",
-    "teacherId": "teacher-1771413429408",
-    "isLunchBreak": false,
-    "isCancelled": false
-  },
-  {
     "id": "tt-1771903481587",
     "subject": "IT Act & Cyber Law",
     "day": "Monday",
@@ -78,6 +68,16 @@
     "startTime": "03:30",
     "endTime": "04:10",
     "teacherId": "teacher-1771864876446",
+    "isLunchBreak": false,
+    "isCancelled": false
+  },
+  {
+    "id": "tt-1775041188357",
+    "subject": "Software Testing & Quality Assurance",
+    "day": "Friday",
+    "startTime": "01:50",
+    "endTime": "02:40",
+    "teacherId": "teacher-1771413429408",
     "isLunchBreak": false,
     "isCancelled": false
   }

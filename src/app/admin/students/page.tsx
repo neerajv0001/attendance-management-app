@@ -37,37 +37,56 @@ export default function AdminStudents() {
     return () => { mounted = false; window.removeEventListener('attendance:update', onUpdate as any); };
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <DashboardLayout role={UserRole.ADMIN}>
+        <div className="loading-container">
+          <div className="spinner"></div>
+          <p>Loading students...</p>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout role={UserRole.ADMIN}>
-      <h1 style={{ marginBottom: '20px', color: '#003366' }}>All Students</h1>
+      <div className="page-header">
+        <h1>All Students</h1>
+        <p>View and manage all registered students in the system.</p>
+      </div>
       
       {students.length > 0 ? (
         <div className="card">
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ background: '#f4f7fa', textAlign: 'left' }}>
-                <th style={{ padding: '15px' }}>Student ID</th>
-                <th style={{ padding: '15px' }}>Name</th>
-                <th style={{ padding: '15px' }}>Department</th>
-                <th style={{ padding: '15px' }}>Created At</th>
-              </tr>
-            </thead>
-            <tbody>
-              {students.map(student => (
-                <tr key={student.id} style={{ borderBottom: '1px solid #eee' }}>
-                  <td style={{ padding: '15px', fontWeight: 'bold' }}>{student.id}</td>
-                  <td style={{ padding: '15px' }}>{student.name}</td>
-                  <td style={{ padding: '15px' }}>{student.department}</td>
-                  <td style={{ padding: '15px' }}>{new Date(student.createdAt).toLocaleDateString()}</td>
+          <div className="table-container">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>Student ID</th>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Created At</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {students.map(student => (
+                  <tr key={student.id}>
+                    <td style={{ fontWeight: '500' }}>{student.id}</td>
+                    <td>{student.name}</td>
+                    <td>{student.department}</td>
+                    <td>{new Date(student.createdAt).toLocaleDateString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : (
-        <div className="card">No students found.</div>
+        <div className="card">
+          <div className="empty-state">
+            <div className="empty-state-icon">📚</div>
+            <p>No students found.</p>
+          </div>
+        </div>
       )}
     </DashboardLayout>
   );

@@ -111,14 +111,26 @@ export default function StudentAttendanceHistory() {
     return '#dc2626';
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <DashboardLayout role={UserRole.STUDENT}>
+        <div className="loading-container">
+          <div className="spinner"></div>
+          <p>Loading attendance history...</p>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout role={UserRole.STUDENT}>
-      <h1 style={{ marginBottom: '20px', color: '#003366' }}>My Attendance History</h1>
+      <div className="page-header">
+        <h1>My Attendance History</h1>
+        <p>View your attendance records and subject-wise breakdown.</p>
+      </div>
 
-      <div className="card" style={{ marginBottom: '14px', padding: '14px 16px' }}>
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+      <div className="card" style={{ marginBottom: '16px', padding: '12px 16px' }}>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <button
             type="button"
             className={`btn btn-sm ${viewMode === 'today' ? '' : 'btn-outline'}`}
@@ -145,26 +157,29 @@ export default function StudentAttendanceHistory() {
 
       {viewMode === 'subject' && (
         <div className="card" style={{ marginBottom: '20px' }}>
-          <h3 style={{ marginBottom: '12px', color: '#003366' }}>Subject-wise Attendance</h3>
+          <h3 style={{ marginBottom: '16px', color: 'var(--text-primary)' }}>Subject-wise Attendance</h3>
           {teacherWiseSubjectBreakdown.length === 0 ? (
-            <p style={{ color: 'var(--text-secondary)' }}>No subject-wise data available yet.</p>
+            <div className="empty-state">
+              <div className="empty-state-icon">📊</div>
+              <p>No subject-wise data available yet.</p>
+            </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {teacherWiseSubjectBreakdown.map((teacherGroup) => (
-                <div key={teacherGroup.teacherName} style={{ border: '1px solid #e5e7eb', borderRadius: 10, padding: 12 }}>
-                  <div style={{ marginBottom: 10, fontWeight: 700, color: '#003366' }}>
+                <div key={teacherGroup.teacherName} style={{ border: '1px solid #e5e7eb', borderRadius: '10px', padding: '16px' }}>
+                  <div style={{ marginBottom: '12px', fontWeight: '700', color: 'var(--text-primary)' }}>
                     Teacher: {teacherGroup.teacherName}
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     {teacherGroup.items.map((item) => (
-                      <div key={`${item.subject}-${item.teacherName}`} style={{ border: '1px solid #e5e7eb', borderRadius: 8, padding: 10 }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                          <strong style={{ color: '#0f172a' }}>{item.subject}</strong>
-                          <span style={{ color: getAttendanceColor(item.percentage), fontWeight: 700 }}>
+                      <div key={`${item.subject}-${item.teacherName}`} style={{ border: '1px solid #e5e7eb', borderRadius: '8px', padding: '12px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '8px' }}>
+                          <strong style={{ color: 'var(--text-primary)' }}>{item.subject}</strong>
+                          <span style={{ color: getAttendanceColor(item.percentage), fontWeight: '700' }}>
                             {item.percentage}% Present
                           </span>
                         </div>
-                        <div style={{ height: 8, background: '#e5e7eb', borderRadius: 999, overflow: 'hidden', marginBottom: 6 }}>
+                        <div style={{ height: '8px', background: '#e5e7eb', borderRadius: '999px', overflow: 'hidden', marginBottom: '8px' }}>
                           <div
                             style={{
                               width: `${item.percentage}%`,
@@ -173,7 +188,7 @@ export default function StudentAttendanceHistory() {
                             }}
                           />
                         </div>
-                        <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
+                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
                           Present: {item.present}/{item.total} | Absent: {item.absent}
                         </div>
                       </div>
@@ -187,42 +202,40 @@ export default function StudentAttendanceHistory() {
       )}
       
       {viewMode !== 'subject' && filteredHistory.length > 0 ? (
-        <table style={{ width: '100%', borderCollapse: 'collapse', background: '#fff' }}>
-          <thead>
-            <tr style={{ background: '#f4f7fa', textAlign: 'left' }}>
-              <th style={{ padding: '15px' }}>Date</th>
-              <th style={{ padding: '15px' }}>Subject</th>
-              <th style={{ padding: '15px' }}>Status</th>
-              <th style={{ padding: '15px' }}>Teacher Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredHistory.map((record: any, index: number) => (
-              <tr key={`${record.date}-${record.studentId || 'self'}-${index}`} style={{ borderBottom: '1px solid #eee' }}>
-                <td style={{ padding: '15px' }}>{record.date}</td>
-                <td style={{ padding: '15px' }}>{record.subject || 'General'}</td>
-                <td style={{ padding: '15px' }}>
-                  <span style={{ 
-                    padding: '5px 10px', 
-                    borderRadius: '20px', 
-                    background: record.status === 'PRESENT' ? '#d4edda' : '#f8d7da',
-                    color: record.status === 'PRESENT' ? '#155724' : '#721c24',
-                    fontWeight: 'bold',
-                    fontSize: '0.8rem'
-                  }}>
-                    {record.status}
-                  </span>
-                </td>
-                <td style={{ padding: '15px', color: '#666' }}>{record.teacherName || record.teacherId || 'N/A'}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="card">
+          <div className="table-container">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Subject</th>
+                  <th>Status</th>
+                  <th>Teacher Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredHistory.map((record: any, index: number) => (
+                  <tr key={`${record.date}-${record.studentId || 'self'}-${index}`}>
+                    <td>{record.date}</td>
+                    <td>{record.subject || 'General'}</td>
+                    <td>
+                      <span className={`badge ${record.status === 'PRESENT' ? 'badge-success' : 'badge-danger'}`}>
+                        {record.status}
+                      </span>
+                    </td>
+                    <td style={{ color: 'var(--text-secondary)' }}>{record.teacherName || record.teacherId || 'N/A'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       ) : viewMode !== 'subject' ? (
         <div className="card">
-          {viewMode === 'today'
-            ? 'No attendance record found for today.'
-            : 'No attendance records found.'}
+          <div className="empty-state">
+            <div className="empty-state-icon">📋</div>
+            <p>{viewMode === 'today' ? 'No attendance record found for today.' : 'No attendance records found.'}</p>
+          </div>
         </div>
       ) : null}
     </DashboardLayout>
